@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useAppDispatch } from "src/app/hooks";
 import { FlexCol } from 'src/components/Flex/FlexCol';
+import { Botao } from "src/components/Form/Botao";
 import { Input } from 'src/components/Form/Input';
+import { setUser } from "src/components/authSlice";
 import { useLoginUserMutation } from 'src/services/authApi';
 
 const initialState = {
@@ -17,6 +20,7 @@ export const Auth = () => {
 
   const { nome, email, senha, confirmSenha } = formValue;
   const [showRegister, setShowRegister] = useState(false);
+  const dispatch = useAppDispatch();
 
   const navigate = useNavigate();
   const [
@@ -39,6 +43,7 @@ export const Auth = () => {
   useEffect(() => {
     if (isLoginSuccess) {
       toast.success('Usuário Logado com sucesso');
+      dispatch(setUser({ token: loginData.token }))
       navigate('/dashboard');
     }
   }, [isLoginSuccess]);
@@ -74,13 +79,9 @@ export const Auth = () => {
                 onChange={handleChange}
               />
             )}
-            <button
-              className="rounded-4 text-20 w-full rounded-lg border-2 border-solid p-4 font-normal text-white shadow-xl duration-300 ease-in-out hover:opacity-80 active:translate-y-1 md:w-32"
-              type="button"
-              onClick={() => handleLogin()}
-            >
+            <Botao onClick={() => handleLogin()}>
               {!showRegister ? 'LOGIN' : 'CADASTRO'}
-            </button>
+            </Botao>
           </FlexCol>
           <h5 className="mb-0">
             {!showRegister ? (
