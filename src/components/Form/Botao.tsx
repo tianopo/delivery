@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from 'react';
 
 interface IBotao extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
@@ -6,7 +6,6 @@ interface IBotao extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Botao = ({ onClick, children, className }: IBotao) => {
-
   return (
     <button
       type="button"

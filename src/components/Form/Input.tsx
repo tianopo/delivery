@@ -6,7 +6,7 @@ interface IInput extends IFormUsos {
   titulo: string;
   placeholder?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  tipo?: 'text' | 'tel' | 'date' | 'email' | 'number' | 'time' | 'datetime-local';
+  tipo?: 'text' | 'tel' | 'date' | 'email' | 'number' | 'time' | 'datetime-local' | 'password';
 }
 
 export const Input = ({
@@ -14,7 +14,6 @@ export const Input = ({
   required,
   titulo,
   placeholder,
-  errors,
   onChange,
   tipo = 'text',
 }: IInput) => {
@@ -32,7 +31,7 @@ export const Input = ({
     .trim();
 
   return (
-    <FlexCol className="w-full gap-1.5 py-2.5">
+    <FlexCol className="w-full gap-1.5 py-2.5 md:w-80">
       <Label titulo={titulo} palavras={palavras} required={required} />
       <input
         id={palavras}
@@ -41,7 +40,6 @@ export const Input = ({
         disabled={disabled}
         placeholder={placeholder}
         onChange={onChange}
-        // {...register}
         autoComplete="complete"
         className={`
         rounded-6

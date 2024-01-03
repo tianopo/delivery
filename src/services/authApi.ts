@@ -15,7 +15,16 @@ export const authApi = createApi({
         };
       },
     }),
+    cadastroUser: builder.mutation({
+      query: (body: { nome: string; email: string; senha: string }) => {
+        return {
+          url: 'auth/cadastro',
+          method: 'post',
+          body,
+        };
+      },
+    }),
   }),
 });
 
-export const { useLoginUserMutation } = authApi;
+export const { useLoginUserMutation, useCadastroUserMutation } = authApi;

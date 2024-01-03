@@ -1,38 +1,35 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { RootState } from "src/app/store"
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from 'src/app/store';
 
 export interface AuthSate {
-  nome: string | null
-  token: string | null
+  nome: string | null;
+  token: string | null;
 }
 
 const initialState: AuthSate = {
   nome: null,
-  token: null
-}
+  token: null,
+};
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState,
   reducers: {
-    setUser: (
-      state,
-      action: PayloadAction<{ token: string }>
-    ) => {
+    setUser: (state, action: PayloadAction<{ token: string }>) => {
       localStorage.setItem(
-        "user",
+        'user',
         JSON.stringify({
           token: action.payload.token,
-        })
+        }),
       );
       state.token = action.payload.token;
     },
     logout: (state) => {
       localStorage.clear();
       state.token = null;
-    }
-  }
-})
+    },
+  },
+});
 
 export const selectAuth = (state: RootState) => state.auth;
 
