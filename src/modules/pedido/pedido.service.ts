@@ -4,8 +4,7 @@ import { PedidoDTO } from './pedido.dto';
 
 @Injectable()
 export class PedidoService {
-
-  constructor(private prisma: PrismaService) { }
+  constructor(private prisma: PrismaService) {}
 
   async create(data: PedidoDTO) {
     const now = new Date();
@@ -13,10 +12,10 @@ export class PedidoService {
     const pedido = await this.prisma.pedido.create({
       data: {
         ...data,
-        status: "pendente",
+        status: 'pendente',
         criadoEm: now,
         atualizadoEm: now,
-      }
+      },
     });
 
     return pedido;
@@ -30,12 +29,12 @@ export class PedidoService {
     const now = new Date();
     const pedidoExists = await this.prisma.pedido.findUnique({
       where: {
-        id
-      }
-    })
+        id,
+      },
+    });
 
     if (!pedidoExists) {
-      throw new Error("Pedido não existe!");
+      throw new Error('Pedido não existe!');
     }
 
     return await this.prisma.pedido.update({
@@ -44,26 +43,26 @@ export class PedidoService {
         atualizadoEm: now,
       },
       where: {
-        id
-      }
-    })
+        id,
+      },
+    });
   }
 
   async delete(id: string) {
     const pedidoExists = await this.prisma.pedido.findUnique({
       where: {
-        id
-      }
-    })
+        id,
+      },
+    });
 
     if (!pedidoExists) {
-      throw new Error("Pedido não existe!");
+      throw new Error('Pedido não existe!');
     }
 
     return await this.prisma.pedido.delete({
       where: {
         id,
-      }
-    })
+      },
+    });
   }
 }

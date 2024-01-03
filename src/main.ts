@@ -6,10 +6,10 @@ async function bootstrap() {
 
   const cors = {
     origin: ['http://localhost:3000'],
-    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS'
-  }
+    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS',
+  };
 
-  app.enableCors(cors)
+  app.enableCors(cors);
   await app.listen(3000);
 }
 bootstrap();
