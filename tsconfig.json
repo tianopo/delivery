@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -18,5 +22,11 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "include": [
+    "src",
+    ".eslintrc.json",
+    "package.json",
+    "tailwind.config.js"
+  ],
 }

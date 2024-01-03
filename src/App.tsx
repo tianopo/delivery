@@ -1,5 +1,5 @@
-import { Auth } from 'pages/Auth';
-import { Dashboard } from 'pages/Dashboard';
+import { Auth } from 'src/pages/Auth';
+import { Dashboard } from 'src/pages/Dashboard';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
