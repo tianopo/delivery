@@ -6,7 +6,7 @@ import { Auth } from 'src/pages/Auth';
 import { useAppDispatch } from './app/hooks';
 import { PrivateRoute } from './components/PrivateRoute';
 import { setUser } from './components/authSlice';
-import { Dashboard } from './pages/Dashboard';
+import { Delivery } from './pages/Delivery';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -23,10 +23,10 @@ function App() {
           <Route path="/" element={<Navigate to="/auth" replace />} />
           <Route path="/auth" element={<Auth />} />
           <Route
-            path="/dashboard"
+            path="/delivery"
             element={
               <PrivateRoute>
-                <Dashboard />
+                <Delivery />
               </PrivateRoute>
             }
           />

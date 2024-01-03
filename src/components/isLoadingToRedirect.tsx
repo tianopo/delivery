@@ -16,8 +16,8 @@ export const LoadingToRedirect = () => {
   }, [count, navigate]);
 
   return (
-    <div className="flex h-screen w-full items-center justify-center p-6">
-      <div className="h-fit w-fit">
+    <div className="flex h-screen w-full items-center justify-center bg-black">
+      <div className="h-fit w-fit bg-white p-6 text-2xl font-semibold">
         <p>Pessoa não autenticada, Redirecionando em {count} segundos</p>
       </div>
     </div>

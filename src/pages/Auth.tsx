@@ -54,7 +54,7 @@ export const Auth = () => {
     if (isLoginSuccess) {
       toast.success('Usuário Logado com sucesso');
       dispatch(setUser({ token: loginData.token }));
-      navigate('/dashboard');
+      navigate('/delivery');
     }
   }, [isLoginSuccess]);
 
@@ -72,7 +72,7 @@ export const Auth = () => {
     if (isCadastroSuccess) {
       toast.success('Usuário cadastrado com sucesso');
       dispatch(setUser({ token: cadastroData.token }));
-      navigate('/dashboard');
+      navigate('/delivery');
     }
   }, [isCadastroSuccess]);
 
