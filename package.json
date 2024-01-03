@@ -1,10 +1,9 @@
 {
-  "name": "nestjs-prisma",
+  "name": "delivery",
   "version": "0.0.1",
   "description": "",
   "author": "https://github.com/tianopo",
   "private": true,
-  "type": "module",
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
