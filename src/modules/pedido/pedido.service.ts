@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { PedidoDTO } from './pedido.dto';
 import { PrismaService } from 'src/database/prismaService';
+import { PedidoDTO } from './pedido.dto';
 
 @Injectable()
 export class PedidoService {
 
-  constructor(private prisma: PrismaService) {}
-  
+  constructor(private prisma: PrismaService) { }
+
   async create(data: PedidoDTO) {
     const now = new Date();
 
@@ -26,19 +26,23 @@ export class PedidoService {
     return this.prisma.pedido.findMany();
   }
 
-  async update(id: string, data:PedidoDTO) {
+  async update(id: string, data: PedidoDTO) {
+    const now = new Date();
     const pedidoExists = await this.prisma.pedido.findUnique({
       where: {
         id
       }
     })
 
-    if(!pedidoExists) {
+    if (!pedidoExists) {
       throw new Error("Pedido não existe!");
     }
 
     return await this.prisma.pedido.update({
-      data,
+      data: {
+        ...data,
+        atualizadoEm: now,
+      },
       where: {
         id
       }
@@ -52,7 +56,7 @@ export class PedidoService {
       }
     })
 
-    if(!pedidoExists) {
+    if (!pedidoExists) {
       throw new Error("Pedido não existe!");
     }
 
