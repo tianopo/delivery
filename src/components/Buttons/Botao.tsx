@@ -1,10 +1,9 @@
-import { Button } from '@chakra-ui/react'
-import { ReactNode } from "react"
-import { corFundo, corPrimaria, corSecundaria } from "settings/colors"
-import { borderRadius, padding } from "settings/measures"
+import { Button } from '@chakra-ui/react';
+import { ReactNode } from 'react';
+import { corFundo, corPrimaria, corSecundaria } from 'src/settings/colors';
+import { borderRadius, padding } from 'src/settings/measures';
 
 export const Botao = ({ children, onClick }: IBotao) => {
-
   return (
     <Button
       width={{ base: '100%', md: '85px' }}
@@ -19,7 +18,7 @@ export const Botao = ({ children, onClick }: IBotao) => {
       borderRadius={borderRadius.lg}
       display="flex"
       fontWeight={'400'}
-      p={padding["2xl"]}
+      p={padding['2xl']}
       bg={corFundo.primaria}
       _hover={{
         opacity: 0.5,
@@ -29,10 +28,10 @@ export const Botao = ({ children, onClick }: IBotao) => {
     >
       {children}
     </Button>
-  )
-}
+  );
+};
 
 interface IBotao {
-  children: ReactNode
-  onClick: () => void
+  children: ReactNode;
+  onClick: () => void;
 }

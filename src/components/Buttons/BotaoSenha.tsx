@@ -1,12 +1,11 @@
-
-import { Flex, Icon } from '@chakra-ui/react'
-import { Eye, EyeSlash } from '@phosphor-icons/react'
-import { useState } from 'react'
-import { corTexto } from "settings/colors"
-import { fontSize } from "settings/measures"
+import { Flex, Icon } from '@chakra-ui/react';
+import { Eye, EyeSlash } from '@phosphor-icons/react';
+import { useState } from 'react';
+import { corTexto } from 'src/settings/colors';
+import { fontSize } from 'src/settings/measures';
 
 export const BotaoSenha = (props: IBotaoSenha) => {
-  const [verSenha, setVerSenha] = useState<boolean>(false)
+  const [verSenha, setVerSenha] = useState<boolean>(false);
 
   return (
     <Flex width="full" position="relative">
@@ -26,9 +25,9 @@ export const BotaoSenha = (props: IBotaoSenha) => {
         <Icon as={verSenha ? EyeSlash : Eye} fontSize={fontSize['4xl']} color={corTexto.primaria} />
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
 interface IBotaoSenha {
-  children?: React.ReactNode | ((props: { verSenha: boolean }) => React.ReactNode)
+  children?: React.ReactNode | ((props: { verSenha: boolean }) => React.ReactNode);
 }

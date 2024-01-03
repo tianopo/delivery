@@ -35,26 +35,26 @@ const base = {
   /** # 320px */ '80xl': '20rem',
   /** # 384px */ '96xl': '24rem',
   /** # 100% */ full: '100%',
-}
+};
 
 const borderRadius = {
   ...base,
-}
+};
 
 const gap = {
   ...base,
-}
+};
 
 const fontSize = {
   ...base,
-}
+};
 
 const padding = {
   ...base,
-}
+};
 
 const margin = {
   ...base,
-}
+};
 
-export { borderRadius, fontSize, gap, margin, padding }
+export { borderRadius, fontSize, gap, margin, padding };
