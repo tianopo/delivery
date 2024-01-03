@@ -1,0 +1,38 @@
+{
+  "css.customData": [".vscode/tailwind.json"],
+  "material-icon-theme.activeIconPack": "react",
+  "files.exclude": {
+    "**/.git": true,
+    ".eslintrc.json": false,
+    ".eslintignore": true,
+    "postcss.config.js": true,
+    ".prettierrc": true,
+  },
+  "material-icon-theme.folders.associations": {
+    "componentes": "react-components",
+    "rotas": "routes",
+    "paginas": "views",
+    "configuracao": "config",
+    "documentacao": "docs",
+    "estilização": "css",
+    "validacoes": "rules",
+    "idiomas": "i18n"
+  },
+  "typescript.preferences.quoteStyle": "double",
+  "editor.minimap.enabled": true,
+  "editor.wordWrap": "on", 
+  "editor.renderWhitespace": "boundary", 
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.suggest.snippetsPreventQuickSuggestions": false, 
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.tslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.addMissingImports": "explicit"
+  },
+}

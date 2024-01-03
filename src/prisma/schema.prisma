@@ -12,15 +12,11 @@ model User {
   criadoEm     DateTime
   atualizadoEm DateTime
 
-  status          Boolean
-  acesso          String
-  nome            String
-  email           String  @unique
-  senhaHash       String
-  token           String?
-  codigoSeguranca String? @db.VarChar(10)
+  nome  String
+  email String @unique
+  senha String
 
-  @@map("autenticacao")
+  @@map("user")
 }
 
 model Pedido {
