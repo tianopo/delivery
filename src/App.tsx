@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Auth } from 'src/pages/Auth';
 import { useAppDispatch } from './app/hooks';
 import { PrivateRoute } from './components/PrivateRoute';
-import { setUser } from './components/authSlice';
+import { setUser } from './features/authSlice';
 import { Delivery } from './pages/Delivery';
 
 function App() {

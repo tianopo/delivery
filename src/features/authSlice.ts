@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'src/app/store';
 
-export interface AuthSate {
+export interface AuthState {
   nome: string | null;
   token: string | null;
 }
 
-const initialState: AuthSate = {
+const initialState: AuthState = {
   nome: null,
   token: null,
 };

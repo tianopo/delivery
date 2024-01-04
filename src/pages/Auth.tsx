@@ -5,7 +5,7 @@ import { useAppDispatch } from 'src/app/hooks';
 import { FlexCol } from 'src/components/Flex/FlexCol';
 import { Botao } from 'src/components/Form/Botao';
 import { Input } from 'src/components/Form/Input';
-import { setUser } from 'src/components/authSlice';
+import { setUser } from 'src/features/authSlice';
 import { useCadastroUserMutation, useLoginUserMutation } from 'src/services/authApi';
 
 const initialState = {
@@ -25,7 +25,7 @@ export const Auth = () => {
 
   const [
     loginUser,
-    { data: loginData, isSuccess: isLoginSuccess, isError: isLoginError, error: loginError },
+    { data: loginData, isSuccess: isLoginSuccess, isError: isLoginError },
   ] = useLoginUserMutation();
 
   const [
@@ -34,7 +34,6 @@ export const Auth = () => {
       data: cadastroData,
       isSuccess: isCadastroSuccess,
       isError: isCadastroError,
-      error: cadastroError,
     },
   ] = useCadastroUserMutation();
 
