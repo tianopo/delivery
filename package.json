@@ -36,7 +36,6 @@
     "autoprefixer": "^10.4.16",
     "bcrypt": "^5.1.1",
     "class-validator": "^0.14.0",
-    "dotenv": "^16.3.1",
     "jest-localstorage-mock": "^2.4.26",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",

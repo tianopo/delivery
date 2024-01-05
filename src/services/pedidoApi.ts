@@ -1,12 +1,11 @@
 import { Pedido } from "@prisma/client";
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Dotenv } from "../settings/dotenv";
 
 
 export const pedidoApi = createApi({
   reducerPath: 'pedidoApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: Dotenv.frontUrl,
+    baseUrl: 'http://localhost:3500',
   }),
   endpoints: (builder) => ({
     pedidoPost: builder.mutation({

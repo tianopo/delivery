@@ -11,7 +11,7 @@
     "postcss.config.js": true,
     "nest-cli.json": true,
     "tsconfig.build.json": true,
-    "jest.config.js": false
+    "jest.config.js": true
   },
   "material-icon-theme.folders.associations": {
     "componentes": "react-components",
