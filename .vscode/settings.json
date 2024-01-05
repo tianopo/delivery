@@ -5,12 +5,13 @@
   "material-icon-theme.activeIconPack": "react",
   "files.exclude": {
     "**/.git": true,
-    ".eslintrc.json": false,
+    ".eslintrc.json": true,
     ".eslintignore": true,
-    ".prettierrc": false,
+    ".prettierrc": true,
     "postcss.config.js": true,
     "nest-cli.json": true,
-    "tsconfig.build.json": true
+    "tsconfig.build.json": true,
+    "jest.config.js": false
   },
   "material-icon-theme.folders.associations": {
     "componentes": "react-components",

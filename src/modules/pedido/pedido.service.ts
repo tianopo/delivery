@@ -4,7 +4,7 @@ import { PedidoDTO } from './pedido.dto';
 
 @Injectable()
 export class PedidoService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   async create(data: PedidoDTO) {
     const now = new Date();
