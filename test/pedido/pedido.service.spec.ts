@@ -1,7 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PrismaService } from 'src/database/prismaService';
-import { PedidoDTO } from './pedido.dto';
-import { PedidoService } from './pedido.service';
+import { PedidoDTO } from "src/modules/pedido/pedido.dto";
+import { PedidoService } from "src/modules/pedido/pedido.service";
+
 
 describe('PedidoService', () => {
   let pedidoService: PedidoService;

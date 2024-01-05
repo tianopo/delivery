@@ -3,9 +3,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import * as bcrypt from 'bcrypt';
 import { PrismaService as RealPrismaService } from 'src/database/prismaService';
 import { UserService } from 'src/modules/user/user.service';
-import { AuthService } from './auth.service';
-import { LoginDto } from './dto/login-user.dto';
-import { CadastroUserDto } from "./dto/cadastro-user.dto";
+import { AuthService } from '../../src/modules/autenticacao/auth.service';
+import { CadastroUserDto } from "../../src/modules/autenticacao/dto/cadastro-user.dto";
+import { LoginDto } from '../../src/modules/autenticacao/dto/login-user.dto';
 
 jest.mock('src/database/prismaService', () => {
   const originalModule = jest.requireActual('src/database/prismaService');

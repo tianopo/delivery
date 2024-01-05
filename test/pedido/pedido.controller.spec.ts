@@ -1,8 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PrismaService } from 'src/database/prismaService';
-import { PedidoController } from './pedido.controller';
-import { PedidoDTO } from './pedido.dto';
-import { PedidoService } from './pedido.service';
+import { PedidoController } from "src/modules/pedido/pedido.controller";
+import { PedidoDTO } from "src/modules/pedido/pedido.dto";
+import { PedidoService } from "src/modules/pedido/pedido.service";
+
 
 describe('PedidoController', () => {
   let controller: PedidoController;
