@@ -23,11 +23,18 @@ export const pedidoSlice = createSlice({
     obter: (state, action: PayloadAction<PedidoState>) => {
       state.pedidos.push(action.payload);
     },
+
+    atualizarStatus: (state, action: PayloadAction<{ id: string; status: string }>) => {
+      const pedido = state.pedidos.find((p) => p.id === action.payload.id);
+      if (pedido) {
+        pedido.status = action.payload.status;
+      }
+    },
   },
 });
 
 export const selectPedidos = (state: RootState) => state.pedido.pedidos;
 
-export const { obter } = pedidoSlice.actions;
+export const { obter, atualizarStatus } = pedidoSlice.actions;
 
 export default pedidoSlice.reducer;

@@ -6,7 +6,7 @@ import { Auth } from 'src/pages/Auth';
 import { useAppDispatch } from './app/hooks';
 import { PrivateRoute } from './components/PrivateRoute';
 import { setUser } from './features/authSlice';
-import { Delivery } from './pages/Delivery';
+import { Delivery } from './pages/Pedido/Delivery';
 
 function App() {
   const dispatch = useAppDispatch();

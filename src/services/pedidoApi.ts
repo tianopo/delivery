@@ -20,7 +20,7 @@ export const pedidoApi = createApi({
       query: () => 'pedido',
     }),
     pedidoPut: builder.mutation({
-      query: (params: { id: string; body: { nome: string; endereco: string; status: string } }) => {
+      query: (params: { id: string; body: { status: string } }) => {
         return {
           url: `pedido/${params.id}`,
           method: 'put',
