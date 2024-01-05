@@ -98,12 +98,10 @@ describe('PedidoService', () => {
         status: 'existente',
       };
 
-      // Configuração do mock para garantir que a função seja um mock
       jest.spyOn(prismaServiceMock.pedido, 'update').mockResolvedValue(updatedPedidoResult);
 
       const result = await pedidoService.update(pedidoId, updatedPedidoData);
 
-      // Ajuste para comparar o resultado com o objeto retornado pelo Prisma
       expect(result).toEqual(updatedPedidoResult);
       expect(prismaServiceMock.pedido.findUnique).toHaveBeenCalledWith({ where: { id: pedidoId } });
       expect(prismaServiceMock.pedido.update).toHaveBeenCalledWith({
@@ -111,7 +109,6 @@ describe('PedidoService', () => {
         where: { id: pedidoId },
       });
 
-      // Ajuste para verificar se a função update foi chamada
       expect(prismaServiceMock.pedido.update).toHaveBeenCalled();
     });
 
@@ -136,7 +133,6 @@ describe('PedidoService', () => {
     it('should delete the specified pedido', async () => {
       const pedidoId = '1';
 
-      // Ajuste para incluir mais propriedades no objeto retornado por findUnique
       jest.spyOn(prismaServiceMock.pedido, 'findUnique').mockResolvedValue({
         id: pedidoId,
         criadoEm: new Date(),
@@ -164,7 +160,6 @@ describe('PedidoService', () => {
     it('should throw an error if the specified pedido does not exist', async () => {
       const pedidoId = 'invalidId';
 
-      // Ajuste para retornar null quando o pedido não existe
       jest.spyOn(prismaServiceMock.pedido, 'findUnique').mockResolvedValue(null);
 
       await expect(pedidoService.delete(pedidoId)).rejects.toThrowError('Pedido não existe!');

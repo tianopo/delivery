@@ -52,6 +52,4 @@ describe('pedidoSlice', () => {
     expect(pedidoAtualizado).toBeTruthy();
     expect(pedidoAtualizado?.status).toEqual(novoStatus);
   });
-
-  // Adicione mais testes conforme necessário
 });
