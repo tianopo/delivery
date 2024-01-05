@@ -4,23 +4,24 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Botao } from "src/components/Form/Botao";
+import { Input } from "src/components/Form/Input";
 import { logout } from 'src/features/authSlice';
-import { usePedidoGetQuery } from "src/services/pedidoApi";
+import { usePedidoGetQuery, usePedidoPostMutation } from "src/services/pedidoApi";
 import AtualizarStatusPedido from "./AtualizarStatusPedido";
 
 const initialState = {
   nome: '',
   endereco: '',
-  status: '',
 };
 
 export const Delivery = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [atualizar, setAtualizar] = useState(false)
-  console.log(atualizar)
+  const [novoPedido, setNovoPedido] = useState(initialState);
 
   const { data: pedidos, error, isLoading, refetch } = usePedidoGetQuery();
+  const [criarPedido] = usePedidoPostMutation();
 
   useEffect(() => {
     refetch()
@@ -32,11 +33,49 @@ export const Delivery = () => {
     navigate('/auth');
   };
 
+  const handleCriarPedido = async () => {
+    try {
+      const response = await criarPedido(novoPedido).unwrap();
+      if (response) {
+        toast.success('Pedido criado com sucesso');
+        setAtualizar((prev) => !prev);
+        setNovoPedido(initialState);
+      }
+    } catch (error) {
+      toast.error('Erro ao criar o pedido');
+    }
+  };
+
+  const handleChangeNovoPedido = (e) => {
+    const { name, value } = e.target;
+    setNovoPedido((a) => ({ ...a, [name]: value }));
+  };
+
   return (
-    <section className="flex h-screen items-center justify-center bg-fundo_primaria">
+    <section className="flex h-full items-center justify-center bg-neutral-800">
       <div className="flex h-full w-full flex-col items-center justify-center gap-4 p-4">
-        <h2 className="text-4xl font-semibold text-black">Delivery</h2>
-        <table className="min-w-full bg-white border border-gray-300">
+        <h2 className="text-4xl font-semibold text-white">Delivery</h2>
+        <div className="mb-4">
+          <h3 className="text-xl font-semibold mb-2 text-white">Novo Pedido</h3>
+          <div className="flex flex-col gap-2">
+            <Input
+              titulo="Nome"
+              placeholder="Nome"
+              value={novoPedido.nome}
+              onChange={handleChangeNovoPedido}
+            />
+            <Input
+              titulo="Endereço"
+              placeholder="Endereço"
+              value={novoPedido.endereco}
+              onChange={handleChangeNovoPedido}
+            />
+            <Botao onClick={handleCriarPedido} className="bg-black">
+              Criar Pedido
+            </Botao>
+          </div>
+        </div>
+        <table className="min-w-full bg-white border border-gray-300 rounded-6">
           <thead>
             <tr>
               <th className="py-2 px-4 border-b">Nome</th>

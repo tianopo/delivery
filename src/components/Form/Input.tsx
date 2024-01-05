@@ -6,6 +6,7 @@ interface IInput extends IFormUsos {
   titulo: string;
   placeholder?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
   tipo?: 'text' | 'tel' | 'date' | 'email' | 'number' | 'time' | 'datetime-local' | 'password';
 }
 
@@ -15,6 +16,7 @@ export const Input = ({
   titulo,
   placeholder,
   onChange,
+  value,
   tipo = 'text',
 }: IInput) => {
   const palavras = titulo
@@ -39,6 +41,7 @@ export const Input = ({
         type={tipo}
         disabled={disabled}
         placeholder={placeholder}
+        value={value}
         onChange={onChange}
         autoComplete="complete"
         className={`
