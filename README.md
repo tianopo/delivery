@@ -10,7 +10,7 @@ Projeto criado com o objetivo de fazer o desafio de entrega para a empresa.
 - Redux
 - Typescript
 - Eslint
-- Next
+- Nest
 - Prisma
 - Jest
 - Banco de dados PostgreSQL
