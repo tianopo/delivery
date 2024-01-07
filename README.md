@@ -39,6 +39,16 @@ $ npm run migrate
 
 ## Rode o Projeto
 
+Back-end:
+```bash
+$ yarn start:dev
+```
+ou
+```bash
+$ npm run start:dev
+```
+
+Front-end:
 ```bash
 $ yarn start
 ```
