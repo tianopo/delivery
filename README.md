@@ -4,6 +4,17 @@
 
 Projeto criado com o objetivo de fazer o desafio de entrega para a empresa.
 
+## Tecnologias Principais Usadas
+
+- React
+- Redux
+- Typescript
+- Eslint
+- Next
+- Prisma
+- Jest
+- Banco de dados PostgreSQL
+
 # Siga as Instruções
 ## Variável de Ambiente
 
