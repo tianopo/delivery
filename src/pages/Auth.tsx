@@ -86,9 +86,9 @@ export const Auth = () => {
   }, [isLoginError, isCadastroError]);
 
   return (
-    <section className={`flex ${!showRegister ? 'h-screen' : 'h-full'} items-center justify-center bg-gradient-to-r from-purple-800 via-purple-600 to-purple-400 p-5`}>
-      <div className="h-fit w-2/3 rounded-xl bg-neutral-600 p-5 shadow-2xl md:w-96">
-        <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+    <section className={`flex items-center justify-center bg-gradient-to-r from-purple-800 via-purple-600 to-purple-400 p-10 h-lvh overflow-hidden`}>
+      <div className="w-2/3 rounded-xl bg-neutral-600 p-3 shadow-2xl md:w-96">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-2">
           <h2 className="text-4xl font-semibold text-white">
             {!showRegister ? 'LOGIN' : 'CADASTRO'}
           </h2>
@@ -97,7 +97,7 @@ export const Auth = () => {
               ? 'Por favor, insira Email & Senha'
               : 'Por favor, insira os detalhes de Usuário'}
           </p>
-          <FlexCol className="w-full items-center gap-2">
+          <FlexCol className="w-full items-center gap-1">
             {showRegister && (
               <Input titulo={'Nome'} placeholder="João da Silva" required onChange={handleChange} />
             )}

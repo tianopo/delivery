@@ -12,7 +12,8 @@
     "nest-cli.json": true,
     "tsconfig.build.json": true,
     "jest.config.js": true,
-    "tailwind.config.js": true
+    "tailwind.config.js": false,
+    "dockerfile": false
   },
   "material-icon-theme.folders.associations": {
     "componentes": "react-components",

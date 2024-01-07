@@ -5,8 +5,12 @@ WORKDIR /usr/src/api
 COPY . .
 COPY ./.env.local ./.env
 
-RUN npm install --quiet --no-optional --no-fund --loglevel=error
+RUN yarn --quiet --no-optional --no-fund --loglevel=error
 
-RUN npm build
+RUN yarn build
 
-CMD ["npm", "run", "start:prod"]
+RUN npx prisma generate
+
+EXPOSE 3500
+
+CMD ["yarn", "start:dev"]

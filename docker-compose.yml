@@ -1,20 +1,24 @@
 version: '3'
 services:
   db-postgres-delivery:
-    image: postgres:alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: postgres:delivery
     container_name: postgres_${DATABASE_DATABASE}
     restart: always
     volumes:
       - ./banco-de-dados-delivery-api:/var/lib/postgresql/data
     environment:
       POSTGRES_DATABASE: ${DATABASE_DATABASE}
-      POSTGRES_ROOT_PASSWORD: ${DATABASE_PASSWORD}
-      POSTGRES_ROOT_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_USER: ${DATABASE_USERNAME}
     ports:
-      - '${DATABASE_PORT}:5433'
+      - '${DATABASE_PORT}:5432'
     expose:
       - '${DATABASE_PORT}'
 
 volumes:
   banco-de-dados-delivery-api:
+
 

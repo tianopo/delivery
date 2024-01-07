@@ -4,6 +4,7 @@
 
 Projeto criado com o objetivo de fazer o desafio de entrega para a empresa.
 
+# Siga as Instruções
 ## Variável de Ambiente
 
 - Copie e cole o .env
@@ -18,6 +19,12 @@ $ yarn
 ou
 ```bash
 $ npm install
+```
+
+## Docker
+
+```bash
+$ docker-compose up -d
 ```
 
 ## Migração do Banco de Dados
@@ -41,10 +48,12 @@ $ npm run start
 ```
 
 ## Teste
-
+Abra um dos arquivos das pasta spec que gostaria de testar e digite na linha de comando:
 ```bash
-# Teste
 $ yarn test
+```
+ou
+```bash
 $ npm run test
 ```
 
