@@ -39,7 +39,8 @@ $ docker-compose up -d
 ```
 
 ## Migração do Banco de Dados
-
+- Crie um banco de dados com o mesmo nome de DATABASE_DATABASE no .env
+- Rode o seguinte comando
 ```bash
 $ yarn migrate
 ```
